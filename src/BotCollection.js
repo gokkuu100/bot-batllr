@@ -3,6 +3,7 @@ import React from 'react'
 function BotCollection() {
   return (
     <div>
+    <div>
       {Object.values(bots).map((bot) => (
         <div key={bot.key}>
           <img src={bot.avatar_url} alt="bot" />
@@ -14,6 +15,7 @@ function BotCollection() {
           </p>
         </div>
       ))}
+    </div>
     </div>
   )
 }
