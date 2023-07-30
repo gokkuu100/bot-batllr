@@ -49,6 +49,7 @@ function App() {
         throw new Error("Failed to delete from backend")
       }
       const updatedEnlistedBots = enlistedBots.filter((enlistBot) => enlistBot.id !== bot.id)
+      alert("deleted from database")
       setEnlistedBots(updatedEnlistedBots)
     })
     .catch((error) => console.error("Error deleting from backend", error))

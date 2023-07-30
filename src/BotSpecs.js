@@ -7,16 +7,16 @@ function BotSpecs({ botselected, goBack, enlistBot}) {
     goBack();
   }
   return (
-    <div>
+    <div className='ml-[40%]'>
       <img src={avatar_url} alt={`Bot`} />
-      <h2>Name: {name}</h2>
+      <h2 className='font-bold text-lg'>Name: {name}</h2>
       <p>Catchphrase: {catchphrase}</p>
-      <h3>Class: {bot_class}</h3>
-      <p>Health: {health} Damage: {damage} Armour: {armour}</p>
+      <h3 className='font-medium'>Class: {bot_class}</h3>
+      <p className='font-medium'>Health: {health} Damage: {damage} Armour: {armour}</p>
       <p>Created at: {created_at}</p>
-      <p>Updated at: {updated_at}</p>
-      <button onClick={goBack}>Go back</button>
-      <button onClick={handleEnlist}>Enlist</button>
+      <p className='pb-4'>Updated at: {updated_at}</p>
+      <button className="bg-black text-white w-24 rounded-md" onClick={goBack}>Go back</button>
+      <button className="bg-black text-white w-24 rounded-md ml-4" onClick={handleEnlist}>Enlist</button>
     </div>
   )
 }

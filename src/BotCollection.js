@@ -5,14 +5,14 @@ function BotCollection({ bots, enlistBot, enlistedBot, showBotSpecs }) {
     enlistBot(bot)
   }
   return (
-    <div>
+    <div className='flex flex-wrap flex-row bg-slate-900 text-white' >
       {Object.values(bots).map((bot) => (
-        <div key={bot.key} onClick={() => showBotSpecs(bot)}>
+        <div key={bot.key} className='p-[10px]' onClick={() => showBotSpecs(bot)}>
           <img src={bot.avatar_url} alt="bot" />
-          <h2>Name: {bot.name}</h2>
+          <h2 className='font-bold text-lg'>Name: {bot.name}</h2>
           <p>Catchphrase: {bot.catchphrase}</p>
           <h3>Class: {bot.bot_class}</h3>
-          <p>
+          <p className='font-medium'>
             Health: {bot.health} Damage: {bot.damage} Armour: {bot.armour}
           </p>
         </div>
