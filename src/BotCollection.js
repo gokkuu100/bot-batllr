@@ -1,8 +1,10 @@
 import React from 'react'
 
-function BotCollection() {
+function BotCollection({ bots, enlistBot }) {
+  const handleEnlist = (bot) => {
+    enlistBot(bot)
+  }
   return (
-    <div>
     <div>
       {Object.values(bots).map((bot) => (
         <div key={bot.key}>
@@ -11,12 +13,12 @@ function BotCollection() {
           <p>Catchphrase: {bot.catchphrase}</p>
           <h3>Class: {bot.bot_class}</h3>
           <p>
-            Health: {bot.health} Damage: {bot.damage} Armour: {both.armour}
+            Health: {bot.health} Damage: {bot.damage} Armour: {bot.armour}
           </p>
         </div>
       ))}
     </div>
-    </div>
+
   )
 }
 

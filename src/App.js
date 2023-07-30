@@ -3,6 +3,7 @@ import BotCollection from './BotCollection'
 
 function App() {
   const [botArray, setBotArray] = useState([])
+  const [enlistedBots, setEnlistedBots] = useState([])
 
   useEffect(() => {
     fetch(`http://localhost:3000/bots`)
@@ -10,19 +11,24 @@ function App() {
       if (!resp.ok) {
         throw new Error("Error fetching data");
       }
-      return resp.json();
-    })
+      return resp.json()})
     .then((data) => {
       if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
         throw new Error ("Wrong format")
       }
-    })
+      setBotArray(data)})
     .catch((error) => console.error("Error fetching data", error))
   }, [])
 
+  const enlistBot = (bot) => {
+    if(!enlistedBots.includes(bot)) {
+      setEnlistedBots([...enlistedBots, bot])
+    }
+  }
+
   return (
     <div>
-      <BotCollection />
+      <BotCollection bots={botArray} enlistBot={enlistBot}/>
     </div>
   )
 }
