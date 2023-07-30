@@ -1,6 +1,6 @@
 import React from 'react'
 
-function YourBotArmy({enlistedBots, releaseBot }) {
+function YourBotArmy({enlistedBots, releaseBot, dischargeBot }) {
   return (
     <div>
       <h2>Your Bot Army</h2>
@@ -13,6 +13,7 @@ function YourBotArmy({enlistedBots, releaseBot }) {
           <p>
             Health: {bot.health} Damage: {bot.damage}
           </p>
+          <button onClick={() => dischargeBot(bot)}>X</button>
         </div>
       ))}
     </div>

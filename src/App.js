@@ -31,11 +31,28 @@ function App() {
     const updatedEnlistedBots = enlistedBots.filter((enlistedBot) => enlistedBot.id !== bot.id);
     setEnlistedBots(updatedEnlistedBots)
   }
+
+  const dischargeBot = (bot) => {
+    fetch(`http://localhost:3000/bots/${bot.id}`, {
+      method: "DELETE",
+      header: {
+        "Content-Type":"application/json"
+      }
+    })
+    .then((resp) => {
+      if(!resp.ok) {
+        throw new Error ("Failed to delete from backend")
+      }
+      const updatedEnlistedBots = enlistedBots.filter((enlistBot) => enlistBot.id !== bot.id)
+      setEnlistedBots(updatedEnlistedBots)
+    })
+    .catch((error) => console.error("Error deleting backend", error))
+  }
   
 
   return (
     <div>
-      <YourBotArmy enlistedBots={enlistedBots} releaseBot={releaseBot}/>
+      <YourBotArmy enlistedBots={enlistedBots} releaseBot={releaseBot} dischargeBot={dischargeBot}/>
       <BotCollection bots={botArray} enlistBot={enlistBot} enlistedBot={enlistedBots}/>
     </div>
   )
