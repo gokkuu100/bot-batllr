@@ -1,9 +1,9 @@
 import React from 'react'
 
 function BotCollection({ bots, enlistBot }) {
-  const handleEnlist = (bot) => {
-    enlistBot(bot)
-  }
+  // const handleEnlist = (bot) => {
+  //   enlistBot(bot)
+  // }
   return (
     <div>
       {Object.values(bots).map((bot) => (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import BotCollection from './BotCollection'
+import YourBotArmy from './YourBotArmy'
 
 function App() {
   const [botArray, setBotArray] = useState([])
@@ -29,6 +30,7 @@ function App() {
   return (
     <div>
       <BotCollection bots={botArray} enlistBot={enlistBot}/>
+      <YourBotArmy enlistedBots={enlistedBots}/>
     </div>
   )
 }

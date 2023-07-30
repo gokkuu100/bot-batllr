@@ -2,7 +2,10 @@ import React from 'react'
 
 function YourBotArmy() {
   return (
-    <div>YourBotArmy</div>
+    <div>
+      <h2>YourBotArmy</h2>
+      {}
+    </div>
   )
 }
 
