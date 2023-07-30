@@ -1,6 +1,9 @@
 import React from 'react'
 
 function YourBotArmy({enlistedBots, releaseBot, dischargeBot }) {
+  // if (!Array.isArray(enlistedBots) || enlistedBots.length === 0) {
+  //   return <div className='bg-purple-500'>Your Bot Army is empty</div>;
+  // }
   return (
     <div className='bg-purple-500 flex flex-wrap flex-row'>
       <h2 className='text-4xl'>Your Bot Army</h2>

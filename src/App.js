@@ -11,7 +11,7 @@ function App() {
   const [selectedBot, setSelectedBot] = useState(null)
   
   useEffect (() => {
-      fetch ('http://localhost:3000/bots')
+      fetch ('https://bot-api-5aah.onrender.com/bots')
       .then((resp) => {
         if (!resp.ok) {
           throw new Error('Error fetching data');
@@ -24,6 +24,7 @@ function App() {
           }
           setBotArray(data)})
       .catch((error) => console.error('Error fetching data', error))
+      
   }, [])
 
   const enlistBot = (bot) => {
@@ -38,7 +39,10 @@ function App() {
   };
 
   const dischargeBot = (bot) => {
-    fetch(`http://localhost:3000/bots/${bot.id}`, {
+    const updatedEnlistedBots = enlistedBots.filter((enlistedBot) => enlistedBot.id !== bot.id);
+    setEnlistedBots(updatedEnlistedBots);
+
+    fetch(`https://bot-api-5aah.onrender.com/bots/${bot.id}`, {
       method: "DELETE",
       header: {
         "Content-Type" : "application/json"
@@ -49,9 +53,13 @@ function App() {
         throw new Error("Failed to delete from backend")
       }
       const updatedEnlistedBots = enlistedBots.filter((enlistBot) => enlistBot.id !== bot.id)
-      alert("deleted from database")
       setEnlistedBots(updatedEnlistedBots)
+      alert("deleted")
     })
+    // .then((data) => {
+    //   setEnlistedBots(data)
+    //   alert("Deleted from database")
+    // })
     .catch((error) => console.error("Error deleting from backend", error))
   }
 
