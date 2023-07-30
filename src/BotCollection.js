@@ -1,13 +1,13 @@
 import React from 'react'
 
-function BotCollection({ bots, enlistBot }) {
-  // const handleEnlist = (bot) => {
-  //   enlistBot(bot)
-  // }
+function BotCollection({ bots, enlistBot, enlistedBot }) {
+  const handleEnlist = (bot) => {
+    enlistBot(bot)
+  }
   return (
     <div>
       {Object.values(bots).map((bot) => (
-        <div key={bot.key}>
+        <div key={bot.key} onClick={() => handleEnlist(bot)}>
           <img src={bot.avatar_url} alt="bot" />
           <h2>Name: {bot.name}</h2>
           <p>Catchphrase: {bot.catchphrase}</p>

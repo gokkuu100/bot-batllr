@@ -27,12 +27,16 @@ function App() {
     }
   }
 
+  const releaseBot = (bot) => {
+    const updatedEnlistedBots = enlistedBots.filter((enlistedBot) => enlistedBot.id !== bot.id);
+    setEnlistedBots(updatedEnlistedBots)
+  }
   
 
   return (
     <div>
-      <BotCollection bots={botArray} enlistBot={enlistBot}/>
-      <YourBotArmy enlistedBots={enlistedBots}/>
+      <YourBotArmy enlistedBots={enlistedBots} releaseBot={releaseBot}/>
+      <BotCollection bots={botArray} enlistBot={enlistBot} enlistedBot={enlistedBots}/>
     </div>
   )
 }

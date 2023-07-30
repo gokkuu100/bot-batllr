@@ -1,11 +1,11 @@
 import React from 'react'
 
-function YourBotArmy(enlistedBots) {
+function YourBotArmy({enlistedBots, releaseBot }) {
   return (
     <div>
       <h2>Your Bot Army</h2>
       {enlistedBots.map((bot) => (
-        <div key={bot.id}>
+        <div key={bot.id} onClick={() => releaseBot(bot)}>
           <img src={bot.avatar_url} alt="Bot" />
           <h2>Name: {bot.name}</h2>
           <p>Catchphrase: {bot.catchphrase}</p>
@@ -13,7 +13,6 @@ function YourBotArmy(enlistedBots) {
           <p>
             Health: {bot.health} Damage: {bot.damage}
           </p>
-          <button onClick={() => dischargeBot(bot)}>X</button>
         </div>
       ))}
     </div>
