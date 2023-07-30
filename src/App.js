@@ -27,6 +27,8 @@ function App() {
     }
   }
 
+  
+
   return (
     <div>
       <BotCollection bots={botArray} enlistBot={enlistBot}/>
