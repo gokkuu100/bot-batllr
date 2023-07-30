@@ -2,7 +2,9 @@ import React from 'react'
 
 function BotSpecs() {
   return (
-    <div>BotSpecs</div>
+    <div>
+      
+    </div>
   )
 }
 

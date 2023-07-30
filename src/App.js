@@ -5,6 +5,7 @@ import YourBotArmy from './YourBotArmy'
 function App() {
   const [botArray, setBotArray] = useState([])
   const [enlistedBots, setEnlistedBots] = useState([])
+  const [selectedBot, setSelectedbot] = useState(null)
 
   useEffect(() => {
     fetch(`http://localhost:3000/bots`)
@@ -48,10 +49,18 @@ function App() {
     })
     .catch((error) => console.error("Error deleting backend", error))
   }
-  
+
+  const showBotSpecs = (bot) => {
+    setSelectedbot(null)
+  }
+
+  const goBack = () => {
+    setSelectedbot(null)
+  }
 
   return (
     <div>
+      
       <YourBotArmy enlistedBots={enlistedBots} releaseBot={releaseBot} dischargeBot={dischargeBot}/>
       <BotCollection bots={botArray} enlistBot={enlistBot} enlistedBot={enlistedBots}/>
     </div>
