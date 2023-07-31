@@ -1,3 +1,28 @@
+
+## Installation
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/gokkuu100/bot-batllr.git
+cd my-task-app
+
+## Usage
+
+Once the development server is running, open your browser and navigate to http://localhost:3000 to access the application. You can start selecting, releasing bots to build your army
+API Endpoints
+
+The application interacts with a backend API to store tasks. The API endpoints used are:
+
+    GET /tasks: Fetches all tasks from the server.
+    POST /tasks: Adds a new task to the server.
+    DELETE /tasks/:id: Removes a task with the specified ID from the server.
+
+Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to create a pull request or submit an issue in the repository.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
