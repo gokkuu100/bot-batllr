@@ -12,7 +12,8 @@ This is a web app where users can build their own bor armies from a list of bots
 
 ```bash
 git clone https://github.com/gokkuu100/bot-batllr.git
-cd my-task-app
+cd bot-batllr
+
 
 ## Usage
 
@@ -21,9 +22,8 @@ API Endpoints
 
 The application interacts with a backend API to store tasks. The API endpoints used are:
 
-    GET /tasks: Fetches all tasks from the server.
-    POST /tasks: Adds a new task to the server.
-    DELETE /tasks/:id: Removes a task with the specified ID from the server.
+    GET /: Fetches all bots from the server.
+    DELETE /:id: Removes a bot with the specified ID from the server.
 
 Contributing
 
