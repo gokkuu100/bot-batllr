@@ -1,3 +1,10 @@
+## Bot-Battlr
+This is a web app where users can build their own bor armies from a list of bots displayed. The app fetches data from an API endpoint and displays the bots, a user can be able to select on an item and it gets displayed on his army, clicking on the bot in your bot army removes it from your list. The X button is used to remove the bot from the backend server, hence wont be available after.
+
+# Technology Used
+-React
+-JavaScript/HTML
+-Tailwind CSS
 
 ## Installation
 
@@ -93,3 +100,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# LICENSE
+Copyright (c) [2023] [PRINCE HOPE]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
